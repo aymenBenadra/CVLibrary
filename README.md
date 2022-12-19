@@ -36,6 +36,7 @@ CVLibrary is a simple library for resume and cover letter storage (and generatio
 
 * [PGAdmin](https://www.pgadmin.org/)
 * [Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html)
+* [Hal Browser](
 
 ### Deployment
 

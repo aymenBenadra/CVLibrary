@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CVLibrary.iml" filepath="$PROJECT_DIR$/.idea/CVLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cv-library.iml" filepath="$PROJECT_DIR$/.idea/modules/cv-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cv-library.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cv-library.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cv-library.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cv-library.test.iml" />
     </modules>
   </component>
 </project>
