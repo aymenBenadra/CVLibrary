@@ -1,0 +1,24 @@
+services:
+  pg:
+    image: postgres
+    volumes:
+      - data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: cv-library
+    ports:
+      - "5432:5432"
+    restart: always
+  pg-admin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@cv.library
+      PGADMIN_DEFAULT_PASSWORD: secret
+    ports:
+        - "80:80"
+    restart: always
+    depends_on:
+      - pg
+volumes:
+  data:
