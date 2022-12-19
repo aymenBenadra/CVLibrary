@@ -1,0 +1,38 @@
+@startuml
+left to right direction
+
+actor "Apprenant" as apprenant
+actor "Formateur" as formateur
+actor "CME" as cme
+
+rectangle Restaurant {
+    usecase "Manage own documents" as UC1
+'    usecase "Manage own **skills**, **education**, and **status**" as UC2
+    usecase "Manage own **status**" as UC2
+    usecase "View students' documents" as UC3
+    usecase "Comment on students' documents" as UC5
+    usecase "View classroom's documents and comments" as UC6
+'    usecase "Generate **JSON Resume** based on **skills** and **education**" as UC7
+    usecase "Login" as UC8
+    usecase "Register" as UC9
+}
+
+UC1 --> UC8
+UC2 --> UC8
+UC3 --> UC8
+UC5 --> UC8
+UC6 --> UC8
+'UC7 --> UC8
+
+UC8 <-right- UC9 : <<extends>>
+
+apprenant --> UC1
+apprenant --> UC2
+'apprenant --> UC7
+
+formateur --> UC6
+
+cme --> UC5
+cme --> UC3
+
+@enduml
