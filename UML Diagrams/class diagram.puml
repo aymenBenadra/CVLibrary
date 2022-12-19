@@ -1,0 +1,74 @@
+@startuml
+
+abstract class User {
+    - id: Long
+    - name: String
+    - email: String
+    - password: String
+    - role: UserRole
+}
+
+enum UserRole {
+    APPRENANT,
+    FORMATEUR,
+    CME
+}
+
+class Apprenant extends User {
+    - hired: Boolean
+    + isHired(): Boolean
+    + setHired(hired: Boolean): void
+    + addDocument(document: Document): void
+    + removeDocument(documentId: Long): void
+}
+
+class Formateur extends User {
+    + addApprenant(apprenant: Apprenant): void
+    + removeApprenant(apprenantId: Long): void
+}
+
+class CME extends User {
+    + addComment(documentId: Long, comment: Comment): void
+    + removeComment(commentId: Long): void
+}
+
+class Classroom {
+    - id: Long
+    - name: String
+}
+
+class Document {
+    - id: Long
+    - title: String
+    - description: String
+    - createdAT: Date
+    - type: TypeDocument
+    - link: String
+}
+
+enum TypeDocument {
+    RESUME,
+    MOTIVATION_LETTER
+}
+
+class Comment {
+    - id: Long
+    - createdAt: Date
+    - content: String
+}
+
+User -[hidden]left- UserRole
+
+Document -[hidden]right- TypeDocument
+
+Apprenant "1" -- "0,*" Document
+
+Classroom "1" -- "1,*" Apprenant
+
+Formateur "1" -- "1" Classroom
+
+CME "1" -- "1,*" Classroom
+
+Document "1" -- "0,*" Comment
+
+@enduml
