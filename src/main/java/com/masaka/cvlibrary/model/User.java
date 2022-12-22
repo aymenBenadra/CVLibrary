@@ -1,4 +1,4 @@
-package com.masaka.cvlibrary.models;
+package com.masaka.cvlibrary.model;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,6 +1,6 @@
-package com.masaka.cvlibrary.repositories;
+package com.masaka.cvlibrary.repository;
 
-import com.masaka.cvlibrary.models.User;
+import com.masaka.cvlibrary.model.User;
 import org.springframework.data.repository.Repository;
 
 import java.util.List;
