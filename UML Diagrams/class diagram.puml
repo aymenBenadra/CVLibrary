@@ -9,6 +9,7 @@ abstract class User {
 }
 
 enum UserRole {
+    ADMIN,
     APPRENANT,
     FORMATEUR,
     CME
@@ -30,6 +31,15 @@ class Formateur extends User {
 class CME extends User {
     + addComment(documentId: Long, comment: Comment): void
     + removeComment(commentId: Long): void
+}
+
+class Admin extends User {
+    + addApprenant(apprenant: Apprenant): void
+    + removeApprenant(apprenantId: Long): void
+    + addFormateur(formateur: Formateur): void
+    + removeFormateur(formateurId: Long): void
+    + addCME(cme: CME): void
+    + removeCME(cmeId: Long): void
 }
 
 class Classroom {
