@@ -16,11 +16,15 @@ enum UserRole {
 }
 
 class Apprenant extends User {
-    - hired: Boolean
-    + isHired(): Boolean
-    + setHired(hired: Boolean): void
+    - status: ApprenantStatus
     + addDocument(document: Document): void
     + removeDocument(documentId: Long): void
+}
+
+enum ApprenantStatus {
+    CHERCHE_EMPLOI,
+    EN_EMPLOI,
+    EN_FORMATION
 }
 
 class Formateur extends User {
