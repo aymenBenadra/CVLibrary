@@ -29,6 +29,10 @@ public class User {
     @NonNull
     private String password;
 
+    @NonNull
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
